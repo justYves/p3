@@ -11,7 +11,34 @@
 |
 */
 
+//Homepage
 Route::get('/', function()
 {
 	return View::make('hello');
+});
+
+
+//Loremp-Ipsum Page
+Route::get('/loremp-ipsum',function()
+{
+	return View::make('loremp-ipsum');
+});
+
+//Process form for Loremp-Ipsum Page
+
+Route::post('/loremp-ipsum',function()
+{
+	return "loremp-ipsum";
+});
+
+//User-Generator Page
+Route::get('/user-generator',function()
+{
+	return View::make('user-generator');
+});
+
+//Process form for User-Generator Page
+Route::post('/user-generator',function()
+{
+	return "user-generator";
 });
