@@ -14,7 +14,7 @@
 //Homepage
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
 });
 
 
@@ -25,7 +25,6 @@ Route::get('/lorem-ipsum',function()
 });
 
 //Process form for Loremp-Ipsum Page
-
 Route::post('/lorem-ipsum',function()
 {
 	$paragraphsNumber = Input::get('number');
@@ -42,14 +41,22 @@ Route::get('/user-generator',function()
 	return View::make('user-generator');
 });
 
+
+
+//Process form for User-Generator Page
 use RandomUser\Generator;
 use RandomUser\User;
 
-//Process form for User-Generator Page
 Route::post('/user-generator',function()
 {
 	$usersNumber = Input::get('number');
-	
+	$address = Input::get('address');
+	$phoneNumber = Input::get('phoneNumber');
+	$dateofBirth = Input::get('dateOfBirth');
+
 		return View::make('user-generator-result')
-			-> with ('usersNumber',$usersNumber);
+			-> with ('usersNumber',$usersNumber)
+			-> with ('address',$address)
+			-> with ('phoneNumber',$phoneNumber)
+			-> with ('dateofBirth',$dateofBirth);			
 });

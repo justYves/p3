@@ -1,16 +1,15 @@
 @extends('_master')
 
 @section('title')
-	Lorem-Ipsum
+	P3
 @stop
 
 @section('content')
-	<h1> Lorem Ipsum  </h1> 
+	<h1> Welcome to my P3 Page!</h1>
 @stop
 
-@section('body')
+@section('body')	
 @stop
 
 @section('result')
-	<p> {{implode('<p>', $paragraphs);}}
 @stop

@@ -1,19 +1,31 @@
+@extends('_master')
 
-<!DOCTYPE html>
-<html>
-<head>
+@section('title')
+	User-Generator
+@stop
 
-	<title>User-generator</title>
-	<meta charset='utf-8'>
+@section('content')
+	<h1> User Generator </h1>
+@stop
 
-</head>
-<body>
-	<h1> User-generator Result </h1>
+@section('body')
+@stop
 
-		<?php 
-		for ($i = 0; $i < $usersNumber; $i++){
-			$user = Faker\Factory::create();
-			echo $user->name ?> </br>
-		<?php }; ?>
-</body>
-</html>
+@section('result')
+	<?php 
+	for ($i = 0; $i < $usersNumber; $i++){
+		$user = Faker\Factory::create();?>
+		<div class="col-md-4">
+			<h2><small>{{$user->name}}</small></h2> </br>
+			@if(isset($address))
+				{{$user->address}}</br>
+			@endif
+			@if(isset($phoneNumber))
+				{{$user->phoneNumber}}</br>
+			@endif	
+			@if(isset($dateofBirth))
+				{{$user->dateTimeThisCentury->format('m/d/Y')}}</br>
+			@endif
+		</div>
+	<?php }; ?>
+@stop

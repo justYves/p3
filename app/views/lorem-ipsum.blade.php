@@ -1,24 +1,21 @@
 
-<!DOCTYPE html>
-<html>
-<head>
+@extends('_master')
 
-	<title>Lorem-Ipsum</title>
-	<meta charset='utf-8'>
+@section('title')
+	Lorem Ipsum
+@stop
 
-</head>
-<body>
-	<h1> Lorem-Ipsum </h1>
+@section('content')
+	<h1> Lorem Ipsum </h1> 
+@stop
 
+@section('body')
 	{{ Form::open(array('url' => '/lorem-ipsum', 'method' => 'POST')) }}
-
 		{{ Form::label('number','Paragraphs') }}
-		
-		{{ Form::text('number'); }}
-
+		{{ Form::text('number',4); }}
 		{{ Form::submit('Generate'); }}
-
 	{{ Form::close() }}
-	
-</body>
-</html>
+@stop
+@section('result')
+
+@stop
