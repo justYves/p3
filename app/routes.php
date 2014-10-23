@@ -19,16 +19,21 @@ Route::get('/', function()
 
 
 //Loremp-Ipsum Page
-Route::get('/loremp-ipsum',function()
+Route::get('/lorem-ipsum',function()
 {
-	return View::make('loremp-ipsum');
+	return View::make('lorem-ipsum');
 });
 
 //Process form for Loremp-Ipsum Page
 
-Route::post('/loremp-ipsum',function()
+Route::post('/lorem-ipsum',function()
 {
-	return "loremp-ipsum";
+	$paragraphsNumber = Input::get('number');
+	$generator = new Badcow\LoremIpsum\Generator();
+	$paragraphs = $generator->getParagraphs($paragraphsNumber);
+
+	return View::make('lorem-ipsum-result')
+		-> with ('paragraphs',$paragraphs);
 });
 
 //User-Generator Page
@@ -40,5 +45,5 @@ Route::get('/user-generator',function()
 //Process form for User-Generator Page
 Route::post('/user-generator',function()
 {
-	return "user-generator";
+	return View::make('user-generator-result');
 });
