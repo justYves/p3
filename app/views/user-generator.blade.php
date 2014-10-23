@@ -13,7 +13,7 @@
 
 	{{ Form::open(array('url' => '/user-generator', 'method' => 'POST')) }}
 
-		{{ Form::label('number','Paragraphs') }}
+		{{ Form::label('number','How many users?') }}
 		
 		{{ Form::text('number'); }}
 

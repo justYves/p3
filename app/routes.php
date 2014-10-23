@@ -42,8 +42,14 @@ Route::get('/user-generator',function()
 	return View::make('user-generator');
 });
 
+use RandomUser\Generator;
+use RandomUser\User;
+
 //Process form for User-Generator Page
 Route::post('/user-generator',function()
 {
-	return View::make('user-generator-result');
+	$usersNumber = Input::get('number');
+	
+		return View::make('user-generator-result')
+			-> with ('usersNumber',$usersNumber);
 });
