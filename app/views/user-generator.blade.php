@@ -37,7 +37,7 @@
 		<?php 
 		for ($i = 0; $i < $usersNumber; $i++){
 			$user = Faker\Factory::create();?>
-			<div class="col-md-4">
+			<div class="col-md-6 col-lg-4">
 				<div class="panel panel-primary">
 					<div class="panel-heading"> 
 					    <h3 class="panel-title"></span> {{$user->name}}</br></h3>
@@ -64,7 +64,6 @@
 				</div>
 			</div>
 
-	
 
 		<?php }; ?>
 	@endif

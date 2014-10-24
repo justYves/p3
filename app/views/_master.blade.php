@@ -5,10 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/united/bootstrap.min.css">
 
 	 <!-- Respond.js proxy on external server -->
 	<link href="http://externalcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
@@ -22,7 +19,6 @@
 	
 </head>
 <body>
-
   	<div class="container">
 
       	<div class="header">
@@ -31,7 +27,7 @@
 		        <li><a href="/lorem-ipsum">Lorem Ipsum</a></li>
 		        <li><a href="/user-generator">User Generator</a></li>
 	        </ul>
-	        <h2 class="text-muted">Project 3</h2>
+	        <h1 class="text-muted">Project 3</h1>
       	</div>
       	<div class="jumbotron">
         	@yield('content')
@@ -40,7 +36,7 @@
 
 		<div class="row">		
 		 	@yield('result')
-		</div>
+
 	</div>
 
 

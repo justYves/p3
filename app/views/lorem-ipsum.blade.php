@@ -26,6 +26,8 @@
 @stop
 @section('result')
 	@if((!empty($_POST)))
-		<p> {{implode('<p>', $paragraphs);}}
+		<blockquote>
+			<p class="text-muted"> {{implode('<p class="text-muted">', $paragraphs);}}
+		</blockquote>
 	@endif
 @stop

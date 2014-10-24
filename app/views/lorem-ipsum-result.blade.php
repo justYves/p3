@@ -11,6 +11,4 @@
 @section('body')
 @stop
 
-@section('result')
-	<p> {{implode('<p>', $paragraphs);}}
-@stop
+
