@@ -8,8 +8,8 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/united/bootstrap.min.css">
 
 	 <!-- Respond.js proxy on external server -->
-	<link href="http://externalcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
-	<link href="respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+	<link href="http://externalcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy"/>
+	<link href="respond.proxy.gif" id="respond-redirect" rel="respond-redirect"/>
 	<script src="respond.proxy.js"></script>
 
 
@@ -36,6 +36,7 @@
 
 		<div class="row">		
 		 	@yield('result')
+		</div>
 
 	</div>
 
