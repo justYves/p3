@@ -9,6 +9,7 @@
 @stop
 
 @section('body')	
+<!--     <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
 @stop
 
 @section('result')

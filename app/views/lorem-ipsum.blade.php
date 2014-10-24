@@ -10,12 +10,22 @@
 @stop
 
 @section('body')
-	{{ Form::open(array('url' => '/lorem-ipsum', 'method' => 'POST')) }}
-		{{ Form::label('number','Paragraphs') }}
-		{{ Form::text('number',4); }}
-		{{ Form::submit('Generate'); }}
-	{{ Form::close() }}
+	@if((!empty($_POST)))
+		{{ Form::open(array('url' => '/lorem-ipsum', 'method' => 'POST')) }}
+			{{ Form::label('number','Paragraphs') }}
+			{{ Form::text('number',$paragraphsNumber); }}
+			{{ Form::submit('Generate'); }}
+		{{ Form::close() }}
+	@else
+		{{ Form::open(array('url' => '/lorem-ipsum', 'method' => 'POST')) }}
+			{{ Form::label('number','Paragraphs') }}
+			{{ Form::text('number',4); }}
+			{{ Form::submit('Generate'); }}
+		{{ Form::close() }}
+	@endif
 @stop
 @section('result')
-
+	@if((!empty($_POST)))
+		<p> {{implode('<p>', $paragraphs);}}
+	@endif
 @stop

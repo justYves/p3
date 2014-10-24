@@ -31,8 +31,9 @@ Route::post('/lorem-ipsum',function()
 	$generator = new Badcow\LoremIpsum\Generator();
 	$paragraphs = $generator->getParagraphs($paragraphsNumber);
 
-	return View::make('lorem-ipsum-result')
-		-> with ('paragraphs',$paragraphs);
+	return View::make('lorem-ipsum')
+		-> with ('paragraphs',$paragraphs)
+		-> with ('paragraphsNumber',$paragraphsNumber);
 });
 
 //User-Generator Page
@@ -52,11 +53,11 @@ Route::post('/user-generator',function()
 	$usersNumber = Input::get('number');
 	$address = Input::get('address');
 	$phoneNumber = Input::get('phoneNumber');
-	$dateofBirth = Input::get('dateOfBirth');
+	$dateOfBirth = Input::get('dateOfBirth');
 
-		return View::make('user-generator-result')
+		return View::make('user-generator')
 			-> with ('usersNumber',$usersNumber)
 			-> with ('address',$address)
 			-> with ('phoneNumber',$phoneNumber)
-			-> with ('dateofBirth',$dateofBirth);			
+			-> with ('dateOfBirth',$dateOfBirth);			
 });
