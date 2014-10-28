@@ -12,14 +12,15 @@ This is the third Project for CSCIE-15. The task is to create two distinct appli
 To be updated by 10/27.
 
 ## Details for teaching team
-The navigation bar is currently not working as intended. The coloring showing the Active page does not change and is currently stuck on Home. I am currently working on fixing this. 
+~~The navigation bar is currently not working as intended. The coloring showing the Active page does not change and is currently stuck on Home. I am currently working on fixing this.~~ fixed on 10.27
+
 
 ## To do List
 This lists items that are not required by the rubric but that I would like to add. These might be added before the screencast day. 
-- Add Validation
-- Figure out how to include bootstrap into a blade template
-- ~~Find a way to indent the second line of address (city, state and zip)~~ updated 10.27
-- Add more comments
+- ~~Add Validation~~ Added form validation for both the lorem ipsum and the user generator applications(updated 10.27)
+- ~~Figure out how to include bootstrap into a blade template~~ fix: include array ('class' => "") (updated 10.27)
+- ~~Find a way to indent the second line of address (city, state and zip)~~ Added an invisible glyphicon (updated 10.27)
+- ~~Add more comments~~ Added comment on the route.php file (updated 10.27)
 - Attempt adding the xlcd password generator
 
 

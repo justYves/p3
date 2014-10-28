@@ -11,26 +11,31 @@
 @stop
 
 @section('body')
-@if((!empty($_POST)))
+
+    	@foreach($errors->all() as $message)
+   		<div class="alert alert-danger alert-error">
+        	<a href="#" class="close" data-dismiss="alert">&times;</a>
+        	<strong>Error! </strong>{{ $message }}
+    	</div>
+    	@endforeach
+
+	@if((!empty($_POST)))
+		<?php $fillednumber=$usersNumber ?> 
+	@else
+		<?php $fillednumber = 1; ?> 
+	@endif
+
+
 	{{ Form::open(array('url' => '/user-generator', 'method' => 'POST')) }}
 		{{ Form::label('number','How many users?') }}
-		{{ Form::text('number',$usersNumber); }} <br>
+		{{ Form::text('number',$fillednumber); }} <small> (limit: 99) </small> <br>
 		{{ Form::checkbox('address','1',isset($address)) }} Address <br>
 		{{ Form::checkbox('phoneNumber','1',isset($phoneNumber)) }} Phone Number<br>
 		{{ Form::checkbox('dateOfBirth','1',isset($dateOfBirth)) }} Date of Birth <br>
-		{{ Form::submit('Generate'); }}
+		{{ Form::submit('Generate',Array('class'=>"btn btn-primary"));; }}
 	{{ Form::close() }}
-@else
-	{{ Form::open(array('url' => '/user-generator', 'method' => 'POST')) }}
-		{{ Form::label('number','How many users?') }}
-		{{ Form::text('number',1); }} <br>
-		{{ Form::checkbox('address','1',false) }} Address <br>
-		{{ Form::checkbox('phoneNumber','1',false) }} Phone Number<br>
-		{{ Form::checkbox('dateOfBirth','1',false) }} Date of Birth <br>
-		{{ Form::submit('Generate'); }}
-	{{ Form::close() }}
-@endif
-@stop
+
+	@stop
 
 @section('result')
 	@if((!empty($_POST)))

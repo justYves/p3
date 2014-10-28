@@ -31,15 +31,43 @@ Route::get('/lorem-ipsum',function()
 //Process form for Loremp-Ipsum Page
 Route::post('/lorem-ipsum',function()
 {
-	$paragraphsNumber = Input::get('number');
-	$generator = new Badcow\LoremIpsum\Generator();
-	$paragraphs = $generator->getParagraphs($paragraphsNumber);
-	$page = '/lorem-ipsum';
+	// Fetch all request data.
+	$data=Input::all();
 
-	return View::make('lorem-ipsum')
-		-> with ('paragraphs',$paragraphs)
-		-> with ('paragraphsNumber',$paragraphsNumber)
+	//Build the validation constraint set
+	$rules = array(
+		'number'=>'required|numeric|min:0|max:30'
+	);
+
+	//Create custom message array
+	$messages = array(
+		'required' => 'No values were submitted',
+		'numeric' => 'The value submitted must be numeric',
+		'min' => 'The value must be positive',
+		'max' => 'The value exeeds the allowed limit. Please input a value less than or equal to 30',
+	);
+
+	//Create a new validator instance
+	$validator= Validator::make($data,$rules,$messages);
+
+	//Proceed with Generating the lorem ipsum
+	if($validator->passes()){
+
+		$paragraphsNumber = Input::get('number');
+		$generator = new Badcow\LoremIpsum\Generator();
+		$paragraphs = $generator->getParagraphs($paragraphsNumber);
+		$page = '/lorem-ipsum';
+
+		return View::make('lorem-ipsum')
+			-> with ('paragraphs',$paragraphs)
+			-> with ('paragraphsNumber',$paragraphsNumber)
 			-> with ('page',$page);
+	}
+
+	$errors = $validator->messages();
+
+	return Redirect::to('/lorem-ipsum')
+		-> withErrors($validator);
 });
 
 //User-Generator Page
@@ -58,16 +86,46 @@ use RandomUser\User;
 
 Route::post('/user-generator',function()
 {
-	$usersNumber = Input::get('number');
-	$address = Input::get('address');
-	$phoneNumber = Input::get('phoneNumber');
-	$dateOfBirth = Input::get('dateOfBirth');
-	$page = '/user-generator';
 
-		return View::make('user-generator')
-			-> with ('usersNumber',$usersNumber)
-			-> with ('address',$address)
-			-> with ('phoneNumber',$phoneNumber)
-			-> with ('dateOfBirth',$dateOfBirth)
-			-> with ('page',$page);		
+	// Fetch all request data.
+	$data=Input::all();
+
+	//Build the validation constraint set
+	$rules = array(
+		'number'=>'required|numeric|min:0|max:99'
+	);
+
+	//Create custom message array
+	$messages = array(
+		'required' => 'No values were submitted',
+		'numeric' => 'The value submitted must be numeric',
+		'min' => 'The value must be positive',
+		'max' => 'The value exeeds allowed limit. Please input a value less than or equal to 99',
+	);
+
+	//Create a new validator instance
+	$validator= Validator::make($data,$rules,$messages);
+
+	//Proceed with Generating the lorem ipsum
+	if($validator->passes()){
+
+		$usersNumber = Input::get('number');
+		$address = Input::get('address');
+		$phoneNumber = Input::get('phoneNumber');
+		$dateOfBirth = Input::get('dateOfBirth');
+		$page = '/user-generator';
+
+			return View::make('user-generator')
+				-> with ('usersNumber',$usersNumber)
+				-> with ('address',$address)
+				-> with ('phoneNumber',$phoneNumber)
+				-> with ('dateOfBirth',$dateOfBirth)
+				-> with ('page',$page);	
+
+	}	
+
+	$errors = $validator->messages();
+
+	return Redirect::to('/user-generator')
+		-> withErrors($validator);
 });
