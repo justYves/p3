@@ -44,7 +44,7 @@ Route::post('/lorem-ipsum',function()
 		'required' => 'No values were submitted',
 		'numeric' => 'The value submitted must be numeric',
 		'min' => 'The value must be positive',
-		'max' => 'The value exeeds the allowed limit. Please input a value less than or equal to 30',
+		'max' => 'The value exceeds the allowed limit. Please input a value less than or equal to 30',
 	);
 
 	//Create a new validator instance
@@ -100,7 +100,7 @@ Route::post('/user-generator',function()
 		'required' => 'No values were submitted',
 		'numeric' => 'The value submitted must be numeric',
 		'min' => 'The value must be positive',
-		'max' => 'The value exeeds allowed limit. Please input a value less than or equal to 99',
+		'max' => 'The value exceeds allowed limit. Please input a value less than or equal to 99',
 	);
 
 	//Create a new validator instance

@@ -55,7 +55,6 @@
 								{{$user->streetAddress}}<br>
 								<span class="glyphicon glyphicon-none"></span>
 								{{$user->city}}, {{$user->stateAbbr}} {{$user->postcode}}<br>
-
 							@endif
 							@if(isset($phoneNumber))
 								<span class="glyphicon glyphicon-earphone"></span> 

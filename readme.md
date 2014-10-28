@@ -6,10 +6,10 @@
 ## Description
 This is the third Project for CSCIE-15. The task is to create two distinct applications: 
 - Lorem Ipsum application: This application generates dummy text. The user may choose the number of paragraphs to output.
-- User Generator application: 
+- User Generator application: This application generates fake users
 
 ## Demo
-To be updated by 10/27.
+http://screencast.com/t/QOQpNb8f
 
 ## Details for teaching team
 ~~The navigation bar is currently not working as intended. The coloring showing the Active page does not change and is currently stuck on Home. I am currently working on fixing this.~~ fixed on 10.27
