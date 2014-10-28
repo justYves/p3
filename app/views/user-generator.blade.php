@@ -48,6 +48,7 @@
 			   				@if(isset($address))
 								<span class="glyphicon glyphicon-home"></span> 
 								{{$user->streetAddress}}<br>
+								<span class="glyphicon glyphicon-none"></span>
 								{{$user->city}}, {{$user->stateAbbr}} {{$user->postcode}}<br>
 
 							@endif

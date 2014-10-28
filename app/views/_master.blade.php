@@ -7,6 +7,8 @@
 	<!-- bootstrap -->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/united/bootstrap.min.css">
 
+	<link rel="stylesheet" href="css/custom.css">
+
 	<title>@yield('title','P3')</title>
 
 	@yield('head')
@@ -17,9 +19,10 @@
 
       	<div class="header">
 	        <ul class="nav nav-pills pull-right">
-		        <li class="active"><a href="/">Home</a></li>
-		        <li><a href="/lorem-ipsum">Lorem Ipsum</a></li>
-		        <li><a href="/user-generator">User Generator</a></li>
+		        <li <?php if ($page =="/")  echo "class='active'"; ?> > <a href="/">Home</a></li>
+		        <li <?php if ($page =="/lorem-ipsum")  echo "class='active'"; ?> ><a href="/lorem-ipsum">Lorem Ipsum</a></li>
+		        <li <?php if ($page =="/user-generator")  echo "class='active'"; ?> ><a href="/user-generator">User Generator</a></li>
+		       <!-- <? if($page == 'one'): ?> class="active"<? endif ?> -->
 	        </ul>
 	        <h1 class="text-muted">Project 3</h1>
       	</div>

@@ -14,14 +14,18 @@
 //Homepage
 Route::get('/', function()
 {
-	return View::make('index');
+	$page = '/';
+	return View::make('index')
+		-> with ('page',$page);
 });
 
 
 //Loremp-Ipsum Page
 Route::get('/lorem-ipsum',function()
 {
-	return View::make('lorem-ipsum');
+	$page = '/lorem-ipsum';
+	return View::make('lorem-ipsum')
+			-> with ('page',$page);
 });
 
 //Process form for Loremp-Ipsum Page
@@ -30,16 +34,20 @@ Route::post('/lorem-ipsum',function()
 	$paragraphsNumber = Input::get('number');
 	$generator = new Badcow\LoremIpsum\Generator();
 	$paragraphs = $generator->getParagraphs($paragraphsNumber);
+	$page = '/lorem-ipsum';
 
 	return View::make('lorem-ipsum')
 		-> with ('paragraphs',$paragraphs)
-		-> with ('paragraphsNumber',$paragraphsNumber);
+		-> with ('paragraphsNumber',$paragraphsNumber)
+			-> with ('page',$page);
 });
 
 //User-Generator Page
 Route::get('/user-generator',function()
 {
-	return View::make('user-generator');
+	$page = '/user-generator';
+	return View::make('user-generator')
+			-> with ('page',$page);
 });
 
 
@@ -54,10 +62,12 @@ Route::post('/user-generator',function()
 	$address = Input::get('address');
 	$phoneNumber = Input::get('phoneNumber');
 	$dateOfBirth = Input::get('dateOfBirth');
+	$page = '/user-generator';
 
 		return View::make('user-generator')
 			-> with ('usersNumber',$usersNumber)
 			-> with ('address',$address)
 			-> with ('phoneNumber',$phoneNumber)
-			-> with ('dateOfBirth',$dateOfBirth);			
+			-> with ('dateOfBirth',$dateOfBirth)
+			-> with ('page',$page);		
 });

@@ -18,7 +18,7 @@ The navigation bar is currently not working as intended. The coloring showing th
 This lists items that are not required by the rubric but that I would like to add. These might be added before the screencast day. 
 - Add Validation
 - Figure out how to include bootstrap into a blade template
-- Find a way to indent the second line of address (city, state and zip)
+- ~~Find a way to indent the second line of address (city, state and zip)~~ updated 10.27
 - Add more comments
 - Attempt adding the xlcd password generator
 
